@@ -1,5 +1,7 @@
 import React from 'react'
-import { Flipcard } from './Flipcard'
+import Flipcard from './Flipcard'
+import { Provider } from 'react-redux';
+import store from '../store/index'
 
 export const FlipcardContainer = () => {
 
@@ -8,9 +10,9 @@ export const FlipcardContainer = () => {
       <h1>Card Flip with Text</h1>
       <h3>Hover over the image below:</h3>
 
-      <Flipcard></Flipcard>
-      
-        
+      <Provider store={store}>
+        <Flipcard></Flipcard>
+      </Provider>
     </div>
   )
 }
