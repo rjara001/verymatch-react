@@ -5,7 +5,7 @@ class Item {
       "id": id,
       "front": "",
       "back": "",
-      "status": "FirstMatch",
+      "status": "Prospect",
       "isRecongnized": false
     }
   }

@@ -37,3 +37,8 @@ export const ActiveTrack = (payload) => ({
   type: 'ActiveTrack',
   payload
 })
+
+export const AddItem = (payload) => ({
+  type: 'AddItem',
+  payload
+})

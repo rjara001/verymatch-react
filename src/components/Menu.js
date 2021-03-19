@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import FlipcardContainer from './FlipcardContainer';
 import Track from './Track';
+import Summary from './Summary';
 import Icon from '@mdi/react';
-import { mdiHome, mdiLanguageRubyOnRails } from '@mdi/js';
+import { mdiHome, mdiLanguageRubyOnRails, mdiViewDashboardVariant } from '@mdi/js';
 
 const Menu = () => {
   useEffect(() => {
@@ -38,7 +39,7 @@ const Menu = () => {
               </li>
 
               <li className="nav__item">
-                <a className="nav__link" href="/#" title="Tour"><Icon path={mdiLanguageRubyOnRails} size={1} color="white" />&nbsp;&nbsp;Tracks</a>
+                <a className="nav__link" href="/summary" title="Summary"><Icon path={mdiViewDashboardVariant} size={1} color="white" />&nbsp;&nbsp;Summary</a>
               </li>
 
               <li className="nav__item">
@@ -66,6 +67,7 @@ const Menu = () => {
               <div>
                 <Route exact path="/" component={FlipcardContainer} />
                 <Route path="/tracks" component={Track} />
+                <Route path="/summary" component={Summary} />
               </div>
 
             </div>

@@ -44,7 +44,7 @@ const reducer = (store = { items: [] }, actions) => {
       }
     case 'AddItem':
       {
-        _manager.AddTime();
+        _manager.AddItem();
         return newStore;
       }
     case 'ChangeTrack':

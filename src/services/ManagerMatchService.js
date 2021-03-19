@@ -74,7 +74,7 @@ export default class ManagerMatchService {
   }
 
   AddItem() {
-    const track = this.store.tracks.find(_ => _.selected);
+    const track = this.store.currentTrack;
     track.items.push(new Item(track.items.length+1));
   }
 

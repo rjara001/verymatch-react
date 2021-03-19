@@ -12,13 +12,21 @@ const mapStateToProps = state => {
   return _store = state;
 };
 
+const Cell = (row, value) => {
+  if (row.status === 'Prospect')
+    return (
+      <input type="text" value={value}></input>
+    )
+  return value;
+}
+
 const Rows = ({ data }) => {
   return data.items.map(_ => {
     return (
       <tr key={_.id}>
         <td></td>
-        <td>{_.front}</td>
-        <td>{_.back}</td>
+        <td>{Cell(_, _.front)}</td>
+        <td>{Cell(_, _.back)}</td>
       </tr>
     )
   });
@@ -66,6 +74,10 @@ const TableItem = () => {
   </table>
 }
 
+const AddItem = () => {
+  store.dispatch(actions.AddItem());
+}
+
 const Track = () => {
   return (
     <div className="w-100 p-3">
@@ -92,7 +104,7 @@ const Track = () => {
               <h4>{_store.currentTrack.name}</h4>
             </div>
             <div className="col-2">
-              <Icon path={mdiPlusCircleOutline} size={1} color="orange" onClick="addItem" />
+              <Link onClick={AddItem}><Icon path={mdiPlusCircleOutline} size={1} color="orange" /></Link>
             </div>
 
           </div>
