@@ -1,17 +1,68 @@
 {
-  "items": [
+  "menus": {
+    "tracksMenuActive": false
+  },
+  "tracks": [
     {
-      "front": "time and again",
-      "back": "una y otra vez"
+      "id": 1,
+      "name": "English 1",
+      "selected": true,
+      "items": [
+        {
+          "id": 2,
+          "front": "to crumble",
+          "back": "a desmoronarse",
+          "status": "FirstMatch",
+          "isRecongnized": false
+        },
+        {
+          "id": 3,
+          "front": "well-proven",
+          "back": "eficacia probada",
+          "status": "FirstMatch",
+          "isRecongnized": false
+        }
+      ]
     },
     {
-      "front": "to crumble",
-      "back": "a desmoronarse"
-    },
-    {
-      "front": "well-proven",
-      "back": "eficacia probada"
+      "id": 2,
+      "name": "English 2",
+      "selected": false,
+      "items": [
+        {
+          "id": 2,
+          "front": "co-existence",
+          "back": "convivencia",
+          "status": "FirstMatch",
+          "isRecongnized": false
+        },
+        {
+          "id": 3,
+          "front": "chrous",
+          "back": "coro",
+          "status": "FirstMatch",
+          "isRecongnized": false
+        }
+      ]
     }
   ],
-  "currentIndex": 0
+  "hibernate": {
+    "items": [
+      {
+        "id": 1,
+        "front": "time and again",
+        "back": "una y otra vez",
+        "status": "FirstMatch",
+        "isRecongnized": false,
+        "history": {
+          "times": 0,
+          "date": ""
+        }
+      }
+    ]
+  },
+  "currentIndex": 1,
+  "statusMatch": "FirstMatch",
+  "matchActive": true,
+  "tracksMenuActive": false
 }

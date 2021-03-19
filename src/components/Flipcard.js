@@ -2,27 +2,28 @@ import React from 'react'
 import { Buttons } from './Buttons'
 import { connect } from 'react-redux';
 
-let _store = []
+let item;
 const mapStateToProps = state => {
-  return _store = state;
+  item = state.currentTrack.items[state.currentTrack.items.findIndex((obj => obj.id === state.currentIndex))];
+  return state;
 };
 
 const Flipcard = () => {
 
   return (
-    <div class="flip-container-inner">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
+    <div className="flip-container-inner">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
             <h1>
               English
             </h1>
 
-            <h2>{_store.items[_store.currentIndex].front}</h2>
+            <h2>{item.front}</h2>
           </div>
-          <div class="flip-card-back">
+          <div className="flip-card-back">
             <h1>Español</h1>
-            <h2>{_store.items[_store.currentIndex].back}</h2>
+            <h2>{item.back}</h2>
           </div>
         </div>
       </div>

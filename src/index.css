@@ -1,15 +1,17 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.flip-container {
+.flip-menu {
   text-align: center;
   text-align: -webkit-center;
 }
 
-.flip-container-inner {
+.summary-container{
+  justify-content: center;
+}
+
+.flip-container-inner { 
   width: 300px;
-  height: 300px;
 }
 
 .flip-card {
@@ -67,4 +69,12 @@ body {
 
 .card-buttons {
   text-align: center;
+}
+
+.pull-right {
+  float: right;
+}
+
+.card-pull-left {
+  float: left;
 }

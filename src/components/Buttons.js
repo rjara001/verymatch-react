@@ -13,12 +13,13 @@ const Next = () => {
 const Success = () => {
   store.dispatch(actions.Success())
 }
+
 export const Buttons = () => {
 
   return (
-    <div class="card-buttons">
+    <div className="card-buttons">
       <ButtonGroup aria-label="Basic example" style={{ "width": "100%" }}>
-        <Button variant="success" onClick={Success} class="btn-block">Ok</Button>{' '}
+        <Button variant="success" onClick={Success}>Ok</Button>{' '}
         <Button variant="dark" onClick={Next}>Next</Button>{' '}
 
       </ButtonGroup>

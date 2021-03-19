@@ -1,18 +1,58 @@
 import React from 'react'
 import Flipcard from './Flipcard'
-import { Provider } from 'react-redux';
-import store from '../store/index'
+import Summary from './Summary';
+import { connect } from 'react-redux';
+import store from '../store/index';
+import * as actions from '../store/actions';
+import { Link } from 'react-router-dom';
 
-export const FlipcardContainer = () => {
+let _store = []
+let options = 'Pause';
+let menus = '';
+const mapStateToProps = state => {
+
+  return _store = state;
+};
+
+const renderByStatus = () => {
+  if (_store.matchActive)
+    options = 'Pause';
+  else
+    options = 'Resume';
+
+  if (_store.tracksMenuActive)
+    menus = 'Do Match';
+  else
+    menus = 'Change Track';
+
+  if (!_store.matchActive)
+    return <Summary></Summary>
+  else
+    return <Flipcard></Flipcard>;
+
+}
+
+const SwitchOption = () => {
+  store.dispatch(actions.SwitchOption())
+}
+
+const FlipcardContainer = () => {
 
   return (
-    <div class="flip-container">
-      <h1>Card Flip with Text</h1>
-      <h3>Hover over the image below:</h3>
-
-      <Provider store={store}>
-        <Flipcard></Flipcard>
-      </Provider>
+    <div className="flip-menu">
+      <div>
+        <h1>VeryMatch</h1>
+        <h3>Learn <b>{_store.currentTrack.items.length}</b> items doing match for <b>{_store.currentTrack.name}</b> </h3>
+        {renderByStatus()}
+      </div>
+      <div>
+        <br></br>
+        <a href="/#" onClick={SwitchOption}>{options}</a>
+        &nbsp;
+        {/* <Link to='/tracks'>{menus}</Link> */}
+      </div>
     </div>
   )
 }
+
+export default connect(mapStateToProps)(FlipcardContainer);

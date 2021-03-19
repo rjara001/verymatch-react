@@ -1,11 +1,14 @@
 import './App.css';
-import { FlipcardContainer } from './components/FlipcardContainer';
+
+import Menu from './components/Menu'
 
 function App() {
   return (
-    <div class="container-all">
-      <FlipcardContainer></FlipcardContainer>
+
+    <div className="container-all">
+      <Menu></Menu> 
     </div>
+
   );
 }
 
